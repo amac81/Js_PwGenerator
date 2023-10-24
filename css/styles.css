@@ -1,3 +1,51 @@
 * {
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    color: #222;
+}
+
+html, body {
+    height: auto;
+    min-height: 100vh;
+}
+
+html {
+    background: linear-gradient(180deg, #499cfc 0%, #ffffff 100%);
+}
+
+input:focus {
+    outline: none;
+}
+
+#register-container {
+    max-width: 900px;
+    min-height: 80vh;
+    margin: 2rem auto;
+    display: flex;
+    -webkit-box-shadow: 24px 24px 49px -5px rgba(46,46,46,1);
+    -moz-box-shadow: 24px 24px 49px -5px rgba(46,46,46,1);
+    box-shadow: 24px 24px 49px -5px rgba(46,46,46,1);
+}
+
+#register-banner {
+    background:url("../img/bg-form.jpeg");
+    background-size: cover;
+    background-position: center;
+    width: 45%;
+}
+
+#banner-layer {
+    padding-left: 0.8rem;
+    padding-top: 3.8rem;
+    background-color: rgba(37, 146, 230, 0.2);
+    height: 100%;
+    display: flex;
+}
+
+#banner-layer h1 {
+    color: #fff;
+    font-size: 3.7rem;
+    margin-bottom: 1.5rem;
 }
