@@ -1,4 +1,4 @@
-# Calculadora de IMC em Javascript 
+# Password generation with JavaScript 
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/amac81/Js_PwGenerator/blob/main/LICENSE) 
 
