@@ -188,9 +188,24 @@ input:focus {
         padding-top: 0.1rem;
     }
     
-    
     #register-form {
         width: 80%;
+    }
+}
+
+@media (max-width: 500px) {       
+    #banner-layer h1 {
+        font-size: 2.5rem !important;
+    }
+
+    #banner-layer {
+        padding-top: 0.8rem;
+        padding-left: 0.3rem;        
+    }
+    
+    #register-container {
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
     }
 }
 
@@ -198,7 +213,18 @@ input:focus {
     #banner-layer h1 {
         font-size: 3.2rem;       
     }    
-    
+
+    #register-container {
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
+    }
+}
+
+@media (max-width: 968px) {       
+    #banner-layer h1 {
+        font-size: 3.2rem;       
+    }    
+
     #register-container {
         margin-left: 0.3rem;
         margin-right: 0.3rem;
