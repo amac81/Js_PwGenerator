@@ -1,6 +1,8 @@
 // Element selection
+const openGeneratPassword = document.querySelector("#open-generate-password");
 const generatePasswordButton = document.querySelector("#generate-password");
 const generatedPasswordElem = document.querySelector("#generated-password");
+const generateOptionsElem = document.querySelector("#pw-generate-options");
 
 // Functions
 const getLetterLowerCase = () => {
@@ -48,7 +50,14 @@ const passwordGenerate = (pwLength, getLetterLowerCase, getLetterUpperCase, getN
 //console.log(window.innerWidth)
 
 // Events
-generatePasswordButton.addEventListener("click", ()=> {
+
+openGeneratPassword.addEventListener("click", ()=> {
+    generateOptionsElem.style.display = "block";
+});
+
+generatePasswordButton.addEventListener("click", (e)=> {
+   e.preventDefault();
+
    const generatedPw = passwordGenerate(10, getLetterLowerCase, getLetterUpperCase, getNumber, getSymbol);
    generatedPasswordElem.style.display = "block";
    

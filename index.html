@@ -25,26 +25,47 @@
         <p id="bigger-p">Register to use all system features</p>
         <div class="form-control">
             <label for="name" id="label-name">Name</label>
-            <input type="text" name="name" id="name" placeholder="enter your name" autocomplete="off">
+            <input type="text" name="name" id="name" placeholder="enter your name" autocomplete="off"/>
         </div>
         <div class="form-control">
             <label for="email" id="label-email">E-mail</label>
-            <input type="text" name="email" id="email" placeholder="enter your e-mail" autocomplete="off">
+            <input type="text" name="email" id="email" placeholder="enter your e-mail" autocomplete="off"/>
         </div>
         <div class="form-control">
             <label for="password" id="label-password">Password</label>
-            <input type="password" name="password" id="password" placeholder="enter password" autocomplete="off">
+            <input type="password" name="password" id="password" placeholder="enter password" autocomplete="off"/>
         </div>
         <p>Do you need help creating a secure password? 
-            <span id="generate-password">Click here</span>
+            <span id="open-generate-password">Click here</span>
         </p>
+        <div id="pw-generate-options">
+            <p>Password options</p>
+            <div class="form-control">
+                <label for="pw-length" id="pw-length-label">Password length</label>
+                <input type="text" name="pw-length" id="pw-length" value="10" autocomplete="off"/>
+            </div>
+            <div class="form-control">
+                <label for="letters-checkbox" id="letters-checkbox-label">Letters</label>
+                <input type="checkbox" id="letters-checkbox" checked/>
+            </div>
+            <div class="form-control">
+                <label for="numbers-checkbox" id="numbers-checkbox-label">Numbers</label>
+                <input type="checkbox" id="numbers-checkbox" checked/>
+            </div>
+            <div class="form-control">
+                <label for="symbols-checkbox" id="symbols-checkbox-label">Symbols</label>
+                <input type="checkbox" id="symbols-checkbox" checked/>
+            </div>
+            <button id="generate-password">Generate</button>
+        </div>
         <div id="generated-password">
             <p>Your generated password</p>
             <h4>xxxxx</h4>
+            <button id="pw-copy">Copy</button>
         </div>
         <div class="form-control">
             <label for="password-confirmation" id="label-password-confirmation">Confirm Password</label>
-            <input type="password" name="password-confirmation" id="password-confirmation" placeholder="enter password confirmation" autocomplete="off">
+            <input type="password" name="password-confirmation" id="password-confirmation" placeholder="enter password confirmation" autocomplete="off"/>
         </div>
         <input type="submit"  value="Sign up">
     </div>
