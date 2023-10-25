@@ -198,4 +198,9 @@ input:focus {
     #banner-layer h1 {
         font-size: 3.2rem;       
     }    
+    
+    #register-container {
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
+    }
 }
