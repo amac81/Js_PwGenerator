@@ -20,9 +20,9 @@
             <h1>Welcome!</h1>
         </div>
     </div>
-    <form id="register-form">
+    <div id="register-form">
         <h2>Sign up:</h2>
-        <p>Register to use all system features</p>
+        <p id="bigger-p">Register to use all system features</p>
         <div class="form-control">
             <label for="name" id="label-name">Name</label>
             <input type="text" name="name" id="name" placeholder="enter your name" autocomplete="off">
@@ -35,19 +35,19 @@
             <label for="password" id="label-password">Password</label>
             <input type="password" name="password" id="password" placeholder="enter password" autocomplete="off">
         </div>
-        <p>Do you need help creating a secure password? <span id="generate-password">Click here</span></p>
+        <p>Do you need help creating a secure password? 
+            <span id="generate-password">Click here</span>
+        </p>
         <div id="generated-password">
-            <p>Here is your generated password</p>
-            <h4></h4>
+            <p>Your generated password</p>
+            <h4>xxxxx</h4>
         </div>
         <div class="form-control">
             <label for="password-confirmation" id="label-password-confirmation">Confirm Password</label>
             <input type="password" name="password-confirmation" id="password-confirmation" placeholder="enter password confirmation" autocomplete="off">
         </div>
-        <div class="form-control">
-             <input type="submit"  value="Sign up">
-        </div>
-    </form>
+        <input type="submit"  value="Sign up">
+    </div>
    </div>   
 </body>
 </html>
