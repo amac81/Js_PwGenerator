@@ -4,6 +4,11 @@ const generatePasswordButton = document.querySelector("#generate-password");
 const generatedPasswordElem = document.querySelector("#generated-password");
 const generateOptionsElem = document.querySelector("#pw-generate-options");
 
+const pwLengthOption = document.querySelector("#pw-length");
+const pwLettersOption = document.querySelector("#letters-checkbox");
+const pwNumbersOption = document.querySelector("#numbers-checkbox");
+const pwSymbolsOption = document.querySelector("#symbols-checkbox");
+
 // Functions
 const getLetterLowerCase = () => {
     //26 letters in alphabet
@@ -27,14 +32,9 @@ const getSymbol = () => {
     return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-const passwordGenerate = (pwLength, getLetterLowerCase, getLetterUpperCase, getNumber, getSymbol) => {
+const passwordGenerate = (pwLength, ... [generators]) => {
     let password = "";
-    const myGenerators = [
-        getLetterLowerCase,
-        getLetterUpperCase,
-        getNumber,
-        getSymbol
-    ];
+    const myGenerators = generators;
 
     //random function execution
     for(i = 0; i < pwLength ; i = i + myGenerators.length){
@@ -55,12 +55,31 @@ openGeneratPassword.addEventListener("click", ()=> {
     generateOptionsElem.style.display = "block";
 });
 
+pwLengthOption.addEventListener("blur", (e) => {
+    //1 character minimum
+    //20 characters maximum
+    (e.target.value>20) ? (e.target.value = 20) : (e.target.value);
+    (e.target.value<1) ? (e.target.value = 1) : (e.target.value);
+});
+
 generatePasswordButton.addEventListener("click", (e)=> {
    e.preventDefault();
 
-   const generatedPw = passwordGenerate(10, getLetterLowerCase, getLetterUpperCase, getNumber, getSymbol);
-   generatedPasswordElem.style.display = "block";
-   
-   generatedPasswordElem.querySelector("h4").innerText = generatedPw;
+   const pwLength = pwLengthOption.value;
 
+   let generatorsToCall = [];
+
+   pwLettersOption.checked ? generatorsToCall.push(getLetterLowerCase, getLetterUpperCase) : null;
+   pwNumbersOption.checked ? generatorsToCall.push(getNumber) : null;
+   pwSymbolsOption.checked ? generatorsToCall.push(getSymbol) : null;
+
+   generatedPasswordElem.style.display = "block";
+   if(generatorsToCall.length!=0){
+         const generatedPw = passwordGenerate(pwLength, generatorsToCall);
+        
+         generatedPasswordElem.querySelector("h4").innerText = generatedPw;
+    }
+    else {
+        generatedPasswordElem.querySelector("h4").innerText = "";
+    }
 });

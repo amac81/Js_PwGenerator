@@ -134,6 +134,7 @@ input:focus {
     font-size: 1.2rem;
     color:rgb(255, 174, 0);
     margin-bottom: 0.5rem;
+    margin-top: 0.8rem;
 }
 
 #generated-password h4{
@@ -167,7 +168,10 @@ input:focus {
 
 #pw-generate-options {
    margin-bottom: 1rem;
-   padding: 1rem;
+   
+   /* top right bottom left */
+   padding: 0.5rem 0.6rem 0rem 0.6rem;
+
    border: 1px solid #ccc;
    display: none;
 }
