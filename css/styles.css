@@ -175,8 +175,7 @@ input:focus {
     
     #banner-layer {
         padding-top: 0.8rem;
-        padding-left: 0.3rem;
-        
+        padding-left: 0.3rem;        
     }
     
     #banner-layer h1 {
@@ -195,6 +194,8 @@ input:focus {
     }
 }
 
-@media (max-width: 768px) {       
-
+@media (max-width: 780px) {       
+    #banner-layer h1 {
+        font-size: 3.2rem;       
+    }    
 }
