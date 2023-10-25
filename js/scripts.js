@@ -46,7 +46,7 @@ const passwordGenerate = (pwLength, getLetterLowerCase, getLetterUpperCase, getN
 
 }
 
-console.log(window.innerWidth)
+//console.log(window.innerWidth)
 
 // Events
 generatePasswordButton.addEventListener("click", ()=> {
