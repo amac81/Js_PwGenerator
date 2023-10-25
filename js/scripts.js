@@ -42,13 +42,16 @@ const passwordGenerate = (pwLength, getLetterLowerCase, getLetterUpperCase, getN
         });
     }
     password = password.slice(0, pwLength);
-    console.log(password);
-
+    return password;
 }
 
 //console.log(window.innerWidth)
 
 // Events
 generatePasswordButton.addEventListener("click", ()=> {
-   passwordGenerate(4, getLetterLowerCase, getLetterUpperCase, getNumber, getSymbol);
+   const generatedPw = passwordGenerate(10, getLetterLowerCase, getLetterUpperCase, getNumber, getSymbol);
+   generatedPasswordElem.style.display = "block";
+   
+   generatedPasswordElem.getElementsByTagName("h4")[0].innerText = generatedPw;
+
 });
