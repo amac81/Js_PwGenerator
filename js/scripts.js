@@ -52,6 +52,6 @@ generatePasswordButton.addEventListener("click", ()=> {
    const generatedPw = passwordGenerate(10, getLetterLowerCase, getLetterUpperCase, getNumber, getSymbol);
    generatedPasswordElem.style.display = "block";
    
-   generatedPasswordElem.getElementsByTagName("h4")[0].innerText = generatedPw;
+   generatedPasswordElem.querySelector("h4").innerText = generatedPw;
 
 });
