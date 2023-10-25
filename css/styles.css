@@ -167,6 +167,11 @@ input:focus {
 /* Mobile */
 
 @media (max-width: 480px) {
+
+    #register-container {
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
+    }
     
     #banner-layer {
         padding-top: 0.8rem;
