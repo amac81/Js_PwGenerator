@@ -131,22 +131,30 @@ pwAutoFillButton.addEventListener("click", (e) => {
 
 });
 
-showPasswordElem.addEventListener("mousedown", (e) => {
-    e.preventDefault();
-    inputPassword.type ="text";
-});
+['mousedown', 'touchstart'].forEach(event => 
+    showPasswordElem.addEventListener(event, ()=> 
+    {
+        inputPassword.type ="text"; 
+    }
+));
 
-showPasswordElem.addEventListener("mouseup", (e) => {
-    e.preventDefault();
-    inputPassword.type ="password";
-});
+['mouseup', 'touchend'].forEach(event => 
+    showPasswordElem.addEventListener(event, ()=> 
+    {
+        inputPassword.type ="password";
+    }
+));
 
-showPasswordConfirmationElem.addEventListener("mousedown", (e) => {
-    e.preventDefault();
-    inputPasswordConfirmation.type ="text";
-});
+['mousedown', 'touchstart'].forEach(event => 
+    showPasswordConfirmationElem.addEventListener(event, ()=> 
+    {
+        inputPasswordConfirmation.type ="text";
+    }
+));
 
-showPasswordConfirmationElem.addEventListener("mouseup", (e) => {
-    e.preventDefault();
-    inputPasswordConfirmation.type ="password";
-});
+['mouseup', 'touchend'].forEach(event => 
+    showPasswordConfirmationElem.addEventListener(event, ()=> 
+    {
+        inputPasswordConfirmation.type ="password";
+    }
+));

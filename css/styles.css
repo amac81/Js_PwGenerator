@@ -123,7 +123,7 @@ input:focus {
 .fa-eye {
     position: absolute;
     top: 60%;
-    right: 2rem;    
+    right: 0.5rem;    
     cursor: pointer;
     color: lightgray;
 }
@@ -205,7 +205,7 @@ input:focus {
     font-weight: bold;
     cursor: pointer;
     transition: 0.5s;
-    min-width: 10rem;
+    min-width: 9rem;
 }
 
 #pw-copy, #pw-autofill {
@@ -265,6 +265,13 @@ input:focus {
     #register-form {
         width: 80%;
     }
+
+    #pw-copy, #pw-autofill {
+        margin-right: 0rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;        
+    }
+    
 }
 
 @media (max-width: 500px) {       
