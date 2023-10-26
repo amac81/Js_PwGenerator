@@ -8,6 +8,7 @@ const pwLengthOption = document.querySelector("#pw-length");
 const pwLettersOption = document.querySelector("#letters-checkbox");
 const pwNumbersOption = document.querySelector("#numbers-checkbox");
 const pwSymbolsOption = document.querySelector("#symbols-checkbox");
+const pwCopyButton = document.querySelector("#pw-copy");
 
 // Functions
 const getLetterLowerCase = () => {
@@ -52,7 +53,7 @@ const passwordGenerate = (pwLength, ... [generators]) => {
 // Events
 
 openGeneratPassword.addEventListener("click", ()=> {
-    generateOptionsElem.style.display = "block";
+    generateOptionsElem.classList.toggle("hide");
 });
 
 pwLengthOption.addEventListener("blur", (e) => {

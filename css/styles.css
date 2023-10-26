@@ -18,6 +18,10 @@ input:focus {
     outline: none;
 }
 
+.hide {
+    display: none;
+}
+
 #register-container {
     max-width: 950px;
     min-height: 92vh;
@@ -173,7 +177,7 @@ input:focus {
    padding: 0.5rem 0.6rem 0rem 0.6rem;
 
    border: 1px solid #ccc;
-   display: none;
+ 
 }
 
 #pw-generate-options #generate-password, #pw-copy{
