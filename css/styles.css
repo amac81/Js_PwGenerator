@@ -42,7 +42,6 @@ input:focus {
 
 #banner-layer {
     padding-left: 1.8rem;
-    padding-top: 4rem;
     background-color: rgba(129, 205, 255, 0.2);
     height: 100%;
     display: flex;
@@ -52,6 +51,7 @@ input:focus {
     color: #fff;
     font-size: 3.7rem;
     margin-bottom: 1.1rem;
+    padding-top: 6rem;
     word-break: break-all;    
 }
 
@@ -90,10 +90,14 @@ input:focus {
     font-size: 1.1rem !important;
 }
 
+.form-control-centered {
+    text-align: center;
+}
+
 .form-control {
     margin-bottom: 1rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
 }
 
 .form-control label {
@@ -110,6 +114,18 @@ input:focus {
     padding-left:0.5rem;
     padding-top: 0.7rem;
     padding-bottom: 0.5rem;
+}
+
+/* Password fields */
+.password-container {
+    position: relative;
+}
+.fa-eye {
+    position: absolute;
+    top: 60%;
+    right: 2rem;    
+    cursor: pointer;
+    color: lightgray;
 }
 
 #open-generate-password {
@@ -172,26 +188,28 @@ input:focus {
 
 #pw-generate-options {
    margin-bottom: 1rem;
-   
    /* top right bottom left */
    padding: 0.5rem 0.6rem 0rem 0.6rem;
-
-   border: 1px solid #ccc;
- 
+   border: 1px solid #ccc; 
 }
 
-#pw-generate-options #generate-password, #pw-copy{
+#pw-generate-options #generate-password, #pw-copy, #pw-autofill{
     background-color:#65adff;
     color:#fdfdfd;
     opacity: .8;
     border:none;
-    padding: 0.4rem;
-    margin-top: 0.9rem;
-    margin-bottom: 0.9rem;
-    font-size: 0.8rem;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+    font-size: 0.9rem;
     font-weight: bold;
     cursor: pointer;
     transition: 0.5s;
+    min-width: 10rem;
+}
+
+#pw-copy, #pw-autofill {
+    margin-right: 1.4rem;
 }
 
 #pw-generate-options #generate-password:hover, #pw-copy:hover{

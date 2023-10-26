@@ -9,6 +9,15 @@ const pwLettersOption = document.querySelector("#letters-checkbox");
 const pwNumbersOption = document.querySelector("#numbers-checkbox");
 const pwSymbolsOption = document.querySelector("#symbols-checkbox");
 const pwCopyButton = document.querySelector("#pw-copy");
+const pwAutoFillButton = document.querySelector("#pw-autofill");
+
+const inputName = document.querySelector("#name");
+const inputEmail = document.querySelector("#email");
+const inputPassword = document.querySelector("#password");
+const inputPasswordConfirmation = document.querySelector("#password-confirmation");
+
+const showPasswordElem = document.querySelector("#pw-eye");
+const showPasswordConfirmationElem = document.querySelector("#pw-confirmation-eye");
 
 // Functions
 const getLetterLowerCase = () => {
@@ -50,10 +59,26 @@ const passwordGenerate = (pwLength, ... [generators]) => {
 
 //console.log(window.innerWidth)
 
+const clearPasswordInputFields = () => {
+    inputPassword.value = "";
+    inputPasswordConfirmation.value = "";
+}
+
+const toggleGeneratorDiv = () => {
+    generateOptionsElem.classList.toggle("hide");
+    
+    if(generatedPasswordElem.innerText){
+        generatedPasswordElem.style.display = "none";
+    }
+        
+    inputPassword.focus();
+}
+
 // Events
 
 openGeneratPassword.addEventListener("click", ()=> {
-    generateOptionsElem.classList.toggle("hide");
+    toggleGeneratorDiv();
+    clearPasswordInputFields();
 });
 
 pwLengthOption.addEventListener("blur", (e) => {
@@ -83,4 +108,45 @@ generatePasswordButton.addEventListener("click", (e)=> {
     else {
         generatedPasswordElem.querySelector("h4").innerText = "";
     }
+});
+
+pwCopyButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const password = generatedPasswordElem.querySelector("h4").innerText;
+
+    //copy to clipboard
+    navigator.clipboard.writeText(password).then(() => {
+        pwCopyButton.innerText = "Password copied"
+    })
+});
+
+pwAutoFillButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const password = generatedPasswordElem.querySelector("h4").innerText;
+
+    //fill password and password confirmation fields
+    inputPassword.value = password;
+    inputPasswordConfirmation.value = password;
+    toggleGeneratorDiv();
+
+});
+
+showPasswordElem.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    inputPassword.type ="text";
+});
+
+showPasswordElem.addEventListener("mouseup", (e) => {
+    e.preventDefault();
+    inputPassword.type ="password";
+});
+
+showPasswordConfirmationElem.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    inputPasswordConfirmation.type ="text";
+});
+
+showPasswordConfirmationElem.addEventListener("mouseup", (e) => {
+    e.preventDefault();
+    inputPasswordConfirmation.type ="password";
 });
